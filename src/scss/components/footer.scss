@@ -1,16 +1,18 @@
 .footer {
-  padding-top: 22px;
-  padding-bottom: 22px;
+  background: #111317;
+  border-top: 1px solid #393e46;
+  padding-top: 48px;
+  padding-bottom: 48px;
 
   @include media(desktop) {
-    padding-top: 47px;
-    padding-bottom: 47px;
   }
 }
 
 .footer-wrapper {
   @include media(desktop) {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -18,90 +20,76 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Lexend', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.44444;
-  text-transform: uppercase;
-  text-align: center;
-  color: #f00;
+  margin-bottom: 20px;
 
   @include media(desktop) {
-  }
-}
-
-.footer-text {
-  font-family: 'Lexend', sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.66667;
-  text-align: center;
-  color: #fff;
-  margin-bottom: 12px;
-
-  @include media(desktop) {
-    font-size: 16px;
-    line-height: 1.625;
     margin-bottom: 0;
-    margin-left: auto;
-  }
-}
-
-.footer-br {
-  @include media(desktop) {
-    display: none;
   }
 }
 
 .footer-nav {
+  margin-bottom: 20px;
+
   @include media(desktop) {
-    margin-left: 30px;
+    margin-bottom: 0;
   }
 }
 
 .footer-list {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   @include media(desktop) {
-    flex-direction: row;
   }
 }
 
 .footer-list-item {
-  @include media(desktop) {
-    position: relative;
+  position: relative;
 
-    &:not(:last-child) {
-      padding-right: 0.5em;
-      margin-right: 0.5em;
+  &:not(:last-child) {
+    padding-right: 0.5em;
+    margin-right: 0.5em;
 
-      &::after {
-        content: '|';
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-      }
+    &::after {
+      content: '|';
+      position: absolute;
+      right: -0.2em;
+      top: 50%;
+      transform: translateY(-50%);
     }
+  }
+
+  @include media(desktop) {
   }
 }
 
 .footer-link {
-  font-family: 'Lexend', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.625;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-  transition: all 0.3s ease-in-out;
-
-  @include media(desktop) {
-  }
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: #a6a6a6;
+  transition: color 0.3s ease-in-out;
 
   &:hover,
   &:focus {
+  }
+
+  @include media(desktop) {
+    font-size: 14px;
+    line-height: 1.42857;
+  }
+}
+
+.footer-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #a6a6a6;
+  text-align: center;
+
+  @include media(desktop) {
   }
 }

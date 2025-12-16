@@ -1,14 +1,15 @@
 .header {
-  backdrop-filter: blur(4px);
-  background: rgba(255, 255, 255, 0.1);
-  padding: 12px 0;
+  box-shadow: 0 4px 4px rgba(254, 100, 1, 0.1);
+  background: #0e1013;
+  padding: 16px 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
 
   @include media(desktop) {
-    padding: 16px 0;
+    padding-top: 36px;
+    padding-bottom: 28px;
   }
 }
 
@@ -19,11 +20,10 @@
 
 .nav {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
 
   @include media(desktop) {
-    justify-content: space-between;
   }
 }
 
@@ -31,23 +31,23 @@
   @include media(desktop) {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
   }
 }
 
 .header-logo-link {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @include media(desktop) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Lexend', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.44444;
-    text-transform: uppercase;
-    color: #f00;
+  }
+}
+
+.logo-icon {
+  @include media(desktop) {
+    min-width: 272px;
+    height: 21px;
   }
 }
 
@@ -68,17 +68,34 @@
 
 .nav-list-link {
   @include media(desktop) {
-    font-family: 'Lexend', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: -0.02em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55556;
     text-align: center;
-    color: #fff;
-    transition: all 0.3s ease-in-out;
+    color: #f2f2f2;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 50%;
+      width: 2px;
+      height: 28px;
+      background: #fe6401;
+      transform: translateY(-50%) scaleY(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
 
     &:hover,
     &.active {
-      color: #f00;
+      text-shadow: 0 0 0 currentColor;
+
+      &::before {
+        transform: translateY(-50%) scaleY(1);
+      }
     }
   }
 }

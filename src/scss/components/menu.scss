@@ -1,13 +1,13 @@
 .context-menu {
   display: none;
-  backdrop-filter: blur(22px);
-  background: rgba(255, 255, 255, 0.1);
-  padding: 60px;
+  box-shadow: 0 4px 4px rgba(254, 100, 1, 0.1);
+  background: #0e1013;
+  padding: 44px 40px;
   max-width: 375px;
   width: 100%;
   margin: 0 auto;
   position: fixed;
-  top: 52px;
+  top: 53px;
   left: 0;
   right: 0;
   transform: none;
@@ -17,21 +17,38 @@
 .context-nav-list {
   display: flex;
   flex-direction: column;
-  gap: 42px;
+  gap: 24px;
   text-align: left;
 }
 
 .context-list-link {
-  font-family: 'Lexend', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: -0.02em;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55556;
   text-align: center;
-  color: #fff;
-  transition: all 0.3s ease-in-out;
+  color: #f2f2f2;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    width: 2px;
+    height: 28px;
+    background: #fe6401;
+    transform: translateY(-50%) scaleY(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
 
   &:active {
-    color: #f00;
+    text-shadow: 0 0 0 currentColor;
+
+    &::before {
+      transform: translateY(-50%) scaleY(1);
+    }
   }
 }
 
