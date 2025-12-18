@@ -58,6 +58,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 283px;
+  max-width: max-content;
 
   @include media(desktop) {
     justify-content: start;
